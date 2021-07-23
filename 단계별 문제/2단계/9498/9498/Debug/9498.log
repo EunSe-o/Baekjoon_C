@@ -1,0 +1,4 @@
+﻿  9498.cpp
+C:\Users\박은서\source\repos\BaekJoon\단계별 문제\2단계\9498\9498\9498.cpp(13,14): warning C4804: '<=': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+C:\Users\박은서\source\repos\BaekJoon\단계별 문제\2단계\9498\9498\9498.cpp(15,14): warning C4804: '<=': 연산에 'bool' 형식을 사용하는 것은 안전하지 않습니다.
+  9498.vcxproj -> C:\Users\박은서\source\repos\BaekJoon\단계별 문제\2단계\9498\Debug\9498.exe
