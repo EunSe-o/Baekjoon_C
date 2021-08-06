@@ -19,22 +19,31 @@ int main(void)
 
 	int fraction[2] = { 1,2 };
 
-	for (int index = 2; index < fracNum; index++)
+	for (int index = 2; index <= fracNum; )
 	{
 		if (fraction[0] == 1)
 		{
 			for (int down = 0; fraction[1] != 1; down++)
 			{
-				fraction[0]++;
-				fraction[1]--;
-				index++;
 				if (index == fracNum)
 				{
 					cout << fraction[0] << "/" << fraction[1];
 					return 0;
 				}
+				fraction[0]++;
+				fraction[1]--;
+				index++;
 			}
-			fraction[0]++;
+			if (fraction[1] == 1)
+			{
+				if (index == fracNum)
+				{
+					cout << fraction[0] << "/" << fraction[1];
+					return 0;
+				}
+				fraction[0]++;
+				index++;
+			}
 			continue;
 		}
 
@@ -42,16 +51,25 @@ int main(void)
 		{
 			for (int up = 0; fraction[0] != 1; up++)
 			{
-				fraction[0]--;
-				fraction[1]++;
-				index++;
 				if (index == fracNum)
 				{
 					cout << fraction[0] << "/" << fraction[1];
 					return 0;
 				}
+				fraction[0]--;
+				fraction[1]++;
+				index++;
 			}
-			fraction[1]++;
+			if (fraction[0] == 1)
+			{
+				if (index == fracNum)
+				{
+					cout << fraction[0] << "/" << fraction[1];
+					return 0;
+				}
+				fraction[1]++;
+				index++;
+			}
 		}
 	}
 
