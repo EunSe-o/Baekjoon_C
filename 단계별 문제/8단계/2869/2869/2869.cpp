@@ -5,23 +5,26 @@ int main(void)
 {
 	int up = 0, down = 0, height = 0;
 	cin >> up >> down >> height;
-	if (up - down == 1)
+
+	if (up >= height)
 	{
-		cout << height - up + 1;
+		cout << "1";
 		return 0;
 	}
 
-	int day = height / (up - down) + 1;
-	for (height %= (up - down); height >= 0; day++)
+	if (up - down == 1)
 	{
-		height -= up;
-		if (height <= 0)
-		{
-			cout << day;
-			return 0;
-		}
-		height += down;
+		int day = (height - up) / (up - down);
+		cout << day + 1;
+		return 0;
 	}
+
+	int day = (height - up) / (up - down);
+
+	if ((height - up) % (up - down) != 0)
+		day++;
+
+	cout << day + 1;
 
 	return 0;
 }
