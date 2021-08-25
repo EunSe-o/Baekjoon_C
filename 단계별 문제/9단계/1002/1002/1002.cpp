@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cmath>
 using namespace std;
 
 int main(void)
@@ -8,19 +9,24 @@ int main(void)
 
 	for (int again = 0; again < tCase; again++)
 	{
-		int jo[2] = { 0 };
-		int beak[2] = { 0 };
-		int ryu[2] = { 0 };
-		int ryuDis[2] = { 0 };
+		int x1, y1, r1, x2, y2, r2;
+		cin >> x1 >> y1 >> r1 >> x2 >> y2 >> r2;
 
-		cin >> jo[0] >> jo[1] >> ryuDis[0] >> beak[0] >> beak[1] >> ryuDis[1];
-		
-		ryu[0] = ryuDis[0] * ryuDis[0] + jo[0] * jo[1];
-		ryu[1] = ryuDis[1] * ryuDis[1] + beak[0] * beak[1];
+		int dis = (int)pow(x2 - x1, 2) + (int)pow(y2 - y1, 2);
 
-		if (ryu[0])
+		if (dis == 0 && r1 == r2)
 			cout << "-1" << endl;
+
+		else if (dis < pow(r1 + r2, 2) && pow(r1 - r2, 2) < dis)
+			cout << "2" << endl;
+
+		else if (dis == pow(r1 + r2, 2) || dis == pow(r1 - r2, 2))
+			cout << "1" << endl;
+
+		else
+			cout << "0" << endl;
 	}
 
 	return 0;
+
 }
